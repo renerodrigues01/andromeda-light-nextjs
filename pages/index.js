@@ -13,7 +13,7 @@ import { TbQuote } from "react-icons/tb";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
+const Home = ({ banner, features, intro, speciality, testimonial }) => {
   const paginationRef = useRef(null);
   const testimonialPaginationRef = useRef(null);
 
@@ -162,11 +162,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
               <div className="col-12">
                 <div className="row relative justify-center pb-10">
                   <div className="banner-content col-10 pt-20 pb-10 text-center">
-                    {markdownify(
-                      banner.title,
-                      "h1",
-                      "mb-8 banner-title opacity-0"
-                    )}
+                    {markdownify(banner.title, "h1", "mb-8 banner-title opacity-0")}
                     <div className="banner-btn opacity-0">
                       <Link className="btn btn-primary" href={banner.link.href}>
                         {banner.link.label}
@@ -186,40 +182,6 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 </div>
               </div>
             </div>
-            <div className="row border-y border-border py-5">
-              <div className="animate from-right col-12">
-                <Swiper
-                  loop={true}
-                  slidesPerView={3}
-                  breakpoints={{
-                    992: {
-                      slidesPerView: 5,
-                    },
-                  }}
-                  spaceBetween={20}
-                  modules={[Autoplay]}
-                  autoplay={{ delay: 3000 }}
-                >
-                  {brands.map((brand, index) => (
-                    <SwiperSlide
-                      className=" h-20 cursor-pointer py-6 px-6 grayscale  transition hover:grayscale-0 lg:px-10"
-                      key={"brand-" + index}
-                    >
-                      <div className="relative h-full">
-                        <ImageFallback
-                          className="object-contain"
-                          src={brand}
-                          sizes="100vw"
-                          alt=""
-                          fill={true}
-                          priority={true}
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -232,7 +194,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
             {markdownify(features.title, "h2", "mt-4 section-title")}
             {markdownify(features.description, "p", "mt-10")}
           </div>
-          <div className="animate from-right relative mt-10">
+          <div className="animate from-right relative mt-6">
             <Swiper
               slidesPerView={1}
               pagination={{
@@ -241,7 +203,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 clickable: true,
                 dynamicBullets: true,
               }}
-              // autoplay={{ delay: 3000 }}
+              autoplay={{ delay: 3000 }}
               onBeforeInit={(swiper) => {
                 swiper.params.pagination.el = paginationRef.current;
               }}
@@ -485,21 +447,19 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
 
 export default Home;
 
-// for homepage data
 export const getStaticProps = async () => {
   const homepage = await getListPage("content/_index.md");
   const { frontmatter } = homepage;
-  const { banner, brands, features, intro, speciality, testimonial } =
+  const { banner, features, intro, speciality, testimonial } =
     frontmatter;
 
   return {
     props: {
-      banner: banner,
-      brands: brands,
-      features: features,
-      intro: intro,
-      speciality: speciality,
-      testimonial: testimonial,
+      banner,
+      features,
+      intro,
+      speciality,
+      testimonial,
     },
   };
 };
