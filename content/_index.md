@@ -1,6 +1,6 @@
 ---
 banner:
-  title: "Obtenez les informations sur votre recharge en un clin d'œil, grâce à nos outils de vérification."
+  title: "Obtenez les informations sur votre recharge en un clin d'œil, grâce à nos outils de vérification simple et rapide."
   image: /images/banner-app.png
   link:
     label: Vérifier ma recharge
@@ -8,23 +8,22 @@ banner:
 
 #features
 features:
-  sub_title: SPECIAL FEATURES
+  sub_title: ÉTAPES DE VÉRIFICATION
   title: Elements To </br> Get You Started
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas </br> Werat viverra id et aliquet. vulputate egestas sollicitudin.
   list:
-    - icon: 'lock' # feather icon: https://feathericons.com/
-      title: J'atteste
-      content: ma recharge de facon simple et rapide.
-    - icon: 'wind'
+    - icon: '/images/salaire.png'
+      title: Je vérifie
+      content: la validité de ma recharge de facon simple et rapide.
+    - icon: '/images/une_carte_securisee.png'
       title: Je recois
       content: ma confirmation par mail ou par téléphone.
-    - icon: 'shield'
+    - icon: '/images/rechargement.png'
       title: Je recharge
-      content: sur ma carte. 
-    - icon: 'link'  
+      content: sur ma carte de facon sécurisée.
+    - icon: '/images/paiement.png'  
       title: J'utilise
-      content: ma carte pour faire mes transactions en France et partout dans le monde.
-
+      content: ma carte pour faire mes transactions en ligne.
 #intro
 intro:
   title: Built Exclusively For You

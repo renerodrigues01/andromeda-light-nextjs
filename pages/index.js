@@ -6,8 +6,8 @@ import VideoPopup from "@layouts/components/VideoPopup";
 import { getListPage } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
-import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { TbQuote } from "react-icons/tb";
 import { Autoplay, Pagination } from "swiper";
@@ -213,7 +213,7 @@ const Home = ({ banner, features, intro, speciality, testimonial }) => {
                   slidesPerView: 2,
                 },
                 1200: {
-                  slidesPerView: 3,
+                  slidesPerView: 4,
                 },
               }}
             >
@@ -221,7 +221,7 @@ const Home = ({ banner, features, intro, speciality, testimonial }) => {
                 <SwiperSlide key={"feature-" + index}>
                   <div className="feature-card m-4 rounded-md border border-transparent py-16 px-7 shadow-[0px_4px_25px_rgba(0,0,0,.05)] transition-all duration-300  hover:border-[#ffece4] hover:shadow-none">
                     <div className="feature-card-icon inline-flex h-20 w-20 items-center justify-center rounded-md border border-[#fff7f3] text-primary">
-                      <FeatherIcon icon={item.icon} />
+                      <Image src={item.icon} alt="" height={100} width={100} />
                     </div>
                     <h3 className="h4 mt-6 mb-5">{item.title}</h3>
                     <p>{item.content}</p>
