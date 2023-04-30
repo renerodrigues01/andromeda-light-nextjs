@@ -48,9 +48,9 @@ speciality:
 
 #Testimonial
 testimonial:
-  title: OUR TESTIMONIALS
-  subtitle: Don’t Take Our Word For It
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas </br> Werat viverra id et aliquet. vulputate egestas sollicitudin.
+  title: NOS TÉMOIGNAGES
+  subtitle: Des centaines de clients en témoignent
+  description: Ils ont décidés de partager leurs expériences avec vous.
   list:
     - author: David Cameron
       avatar: /images/user-img/01.jpg
